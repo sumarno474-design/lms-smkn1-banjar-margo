@@ -14,6 +14,14 @@
 <div class="modal-back" id="modalBack"><div class="modal"><h2 id="modalTitle">Selamat datang!</h2><p id="modalDesc">Masuk untuk melihat progres belajarmu.</p><form id="loginForm"><label for="studentName">Nama lengkap</label><input id="studentName" placeholder="Masukkan nama lengkap" required><label for="studentClass">Kelas</label><select id="studentClass" required><option value="">Pilih kelas</option><option>X ATPH</option><option>XI ATPH</option><option>XII ATPH</option><option>XI KIK</option><option>XII KIK</option><option>X TSM</option><option>XI TSM</option><option>XII TSM</option><option>X TKJ</option><option>XI TKJ</option><option>XII TKJ</option><option>XI MP</option><option>XII MP</option></select><div class="modal-actions"><button class="login" type="submit">Lanjutkan</button><button class="secondary" type="button" id="cancelModal">Batal</button></div></form><div class="notice">Demo antarmuka: login ini hanya menyimpan nama di sesi halaman, belum memakai akun sekolah atau database.</div></div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+// Konfigurasi koneksi Supabase
+const SUPABASE_URL = 'https://qvqzxsmjmihdysegteyx.supabase.co/rest/v1/';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_Ho8bhD5i_S4raFM_RcSTXA_ydxCVsyb';
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
 const subjects=[
 {id:'atph11',name:'Konsentrasi Keahlian ATPH',grade:'Kelas XI',group:'ATPH',desc:'Budidaya tanaman, media tanam, hidroponik, dan fertigasi.',icon:'🌿',color:'#e0f4e5',progress:62,lessons:8},
 {id:'atph12',name:'Konsentrasi Keahlian ATPH',grade:'Kelas XII',group:'ATPH',desc:'Pengelolaan produksi, panen, pascapanen, dan usaha tani.',icon:'🍈',color:'#e0f4e5',progress:25,lessons:10},
